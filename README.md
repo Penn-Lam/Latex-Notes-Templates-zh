@@ -1,2 +1,3 @@
-# Latex-Notes-Templates
-A collection of my latex notes, showcased as templates. 
+<h1 align="center"> Latex-Notes-Showcase </h1>
+
+Hmmm.
