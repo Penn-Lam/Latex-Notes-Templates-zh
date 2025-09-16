@@ -12,7 +12,7 @@ Singularity/
 ├── images/
 │   ├── image.png
 │   ├── imageb.png
-├── equations.tex
+├── main.tex
 └── preamble.sty
 ```
 
@@ -133,4 +133,156 @@ With Heading.
 The usage pattern is similar to the blue box. 
 
 
-# YoRHa
+# YoRHa.
+
+<p align="middle">
+  <img src="assets/boron_page-0001.jpg" width="300" />
+  <img src="assets/equations_page-0006.jpg" width="300" /> 
+</p>
+
+Similar Directory structure as [Singularity](https://github.com/blxkex/Latex-Notes-Templates?tab=readme-ov-file#singularity). 
+
+
+## Background Grid. 
+
+```tex
+\AddToShipoutPictureBG{%
+\begin{tikzpicture}[remember picture, overlay,
+                    help lines/.append style={line width=0.05pt, color=yorhagrid}]
+  \draw[help lines] (current page.south west) grid[step=5pt]
+                    (current page.north east);
+\end{tikzpicture}%
+}
+```
+
+> Recommended to copy the imported packages from my notes, as I don't clearly remember the packages that were necessary for this.
+
+## The Diagram Frame. 
+
+```tex
+\newtcolorbox{boxx}{%
+    enhanced,
+    colback=yorhabg,
+    colframe=yorhafg,
+    coltext=yorhafg,
+    coltitle=yorhabg,
+    arc=0pt,
+    outer arc=0pt,
+    drop shadow southeast,
+    sharp corners
+}
+```
+
+## The Question Box. (Diagram Frame with Heading)
+
+Made it so that it takes dynamic heading everytime. (similar to the [blue box in Singularity](https://github.com/blxkex/Latex-Notes-Templates?tab=readme-ov-file#the-blue-box-for-question))
+
+```tex
+\newtcolorbox{question}[1]{%
+    enhanced,
+    colback=yorhabg,
+    colframe=yorhafg,
+    coltext=yorhafg,
+    coltitle=yorhabg,
+    title=\textbf{#1},
+    arc=0pt,
+    outer arc=0pt,
+    drop shadow southeast,
+    sharp corners
+}
+```
+
+## The bar graph. 
+
+Used python (jupyter notebook) to generate those bars. Basically I give the data as a list of values, it normalizes the values according to the space alotted and returns a string and automatically copies to clipboard using `pyperclip`. **I DID NOT INTEGRATE PYTHON WITH LATEX. I RUN THE NOTEBOOK SEPARATELY.** But, here's the code if you want to run it as a script. 
+
+```py
+import pyperclip
+
+# Sample electronegativity values (Pauling scale) for the Boron family
+values = [2.0, 1.6, 1.8, 1.8, 1.8]
+
+
+# ---------------------------------------------------------
+# Utility: Compute evenly spaced vertical positions for n items
+# ---------------------------------------------------------
+def get_label_positions(n: int):
+    return [i * (5 / n) for i in range(1, n + 1)]
+
+
+# ---------------------------------------------------------
+# Generate TikZ draw commands for horizontal bars
+# Each bar length is scaled relative to the maximum value
+# ---------------------------------------------------------
+def generate_bar_code(values: list):
+    max_val = max(values)
+    positions = get_label_positions(len(values))
+
+    code = ""
+    for idx, val in enumerate(values):
+        scaled_length = round((val / max_val) * 4.5, 4)
+        code += (
+            fr"\draw[line width=10px] (0, -{positions[idx]}) "
+            fr"-- ({scaled_length}, -{positions[idx]}) "
+            fr"node[right]{{{val}}};" + "\n"
+        )
+    return code
+
+
+# ---------------------------------------------------------
+# Generate TikZ node labels for elements
+# Currently hard-coded for Boron family: Br, Al, Ga, In, Tl
+# ---------------------------------------------------------
+def generate_node_labels(family: str):
+    if family == "b":
+        elements = ["Br", "Al", "Ga", "In", "Tl"]
+
+    positions = get_label_positions(len(elements))
+    code = ""
+    for idx, element in enumerate(elements):
+        code += fr"\node at (-0.5, -{positions[idx]}) {{{element}}};" + "\n"
+    return code
+
+
+# ---------------------------------------------------------
+# Generate connecting polyline + markers for data points
+# ---------------------------------------------------------
+def generate_decorations(values: list):
+    max_val = max(values)
+    positions = get_label_positions(len(values))
+
+    # Polyline connecting all values
+    code = fr"\draw[gruvred] " + " -- ".join(
+        [f"({round((val / max_val) * 4.5, 4)}, -{positions[idx]})"
+         for idx, val in enumerate(values)]
+    ) + ";" + "\n"
+
+    # Draw circles at each point
+    for idx, val in enumerate(values):
+        x = round((val / max_val) * 4.5, 4) - 0.3
+        y = -positions[idx]
+        code += fr"\fill[yorhabg] ({x}, {y}) circle (1pt);" + "\n"
+        code += fr"\draw[yorhabg] ({x}, {y}) circle (2pt);" + "\n"
+
+    return code
+
+
+# ---------------------------------------------------------
+# Main: Build full TikZ picture code
+# ---------------------------------------------------------
+result_code = r"""
+\node[] at (2, 0) {\underline{Electronegativity}};
+\node[draw] at (5, 0) {units = Pauling Scale};
+""" + generate_bar_code(values) \
+    + generate_node_labels("b") \
+    + generate_decorations(values)
+
+# Copy result to clipboard for quick paste into LaTeX
+pyperclip.copy(result_code)
+
+```
+
+> I suck at writing readable code. This was rewritten by chatgpt so others could understand it, if you want the raw, unreadable, atrcious code, you can look into the files. 
+
+
+## 
