@@ -2,6 +2,20 @@
 
 <img src="assets/coverpage.png">
 
+--- 
+# Contents. 
+
+1. ### [General Information](https://github.com/blxkex/Latex-Notes-Templates?tab=readme-ov-file#general-information)
+
+2. ### [Singularity](https://github.com/blxkex/Latex-Notes-Templates?tab=readme-ov-file#singularity)
+
+3. ### [YoRHa](https://github.com/blxkex/Latex-Notes-Templates?tab=readme-ov-file#singularity)
+
+4. ### [My Workfow](https://github.com/blxkex/Latex-Notes-Templates?tab=readme-ov-file#singularity)
+
+
+
+
 ## General Information.
 
 I won't be removing the information (my notes), as some might find the code for the diagrams and etc useful. There might be some minute mistakes here and there.
@@ -320,7 +334,7 @@ Obviously install VS Code or any VS Code forks (like trae, kiro, etc.)
 
 Look at this: https://github.com/sleepymalc/VSCode-LaTeX-Inkscape?tab=readme-ov-file#hypersnips
 
-For the setup of the snippets, download [this file](https://github.com/sleepymalc/VSCode-LaTeX-Inkscape/blob/main/VSCode-setting/Snippets/latex.hsnips) and paste it in the respective directory for each OS. The directory location is given in the README of HyperSnips extension. 
+For the setup of the snippets, download [this file](https://github.com/sleepymalc/VSCode-LaTeX-Inkscape/blob/main/VSCode-setting/Snippets/latex.hsnips) and paste it in the respective directory for each OS. The directory location is given in the README of HyperSnips extension. Additional information is provided in sleepymalc's repo too. 
 
 And there you have it! 
 
