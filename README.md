@@ -9,11 +9,9 @@
 
 2. ### [Singularity](https://github.com/blxkex/Latex-Notes-Templates?tab=readme-ov-file#singularity)
 
-3. ### [YoRHa](https://github.com/blxkex/Latex-Notes-Templates?tab=readme-ov-file#singularity)
+3. ### [YoRHa](https://github.com/blxkex/Latex-Notes-Templates?tab=readme-ov-file#yorha-1)
 
-4. ### [My Workfow](https://github.com/blxkex/Latex-Notes-Templates?tab=readme-ov-file#singularity)
-
-
+4. ### [My Workfow](https://github.com/blxkex/Latex-Notes-Templates?tab=readme-ov-file#my-workflow)
 
 
 ## General Information.
