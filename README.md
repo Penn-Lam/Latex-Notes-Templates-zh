@@ -16,7 +16,7 @@
 
 ## General Information.
 
-I won't be removing the information (my notes), as some might find the code for the diagrams and etc useful. There might be some minute mistakes here and there.
+**This documentation can also serve as a beginner friendly guide to people writing their notes on overleaf and want to switch over to VSCode**. I won't be removing the information (my notes), as some might find the code for the diagrams and etc useful. There might be some minute mistakes here and there.
 
 ### Structure. 
 ```
@@ -94,7 +94,7 @@ This is just a note instead of a question.
 \end{question}
 ```
 
-*I have hardcoded the heading as "Question." to reduce repitition, so it might different in my notes.*
+*I have hardcoded the heading as "Question." to reduce repitition, so it is different in my notes.*
 
 ---
 ### The red box. 
