@@ -13,7 +13,8 @@ Singularity/
 │   ├── image.png
 │   ├── imageb.png
 ├── main.tex
-└── preamble.sty
+├── preamble.sty
+└── {output}.pdf
 ```
 
 ### Modified Margins.
@@ -285,4 +286,5 @@ pyperclip.copy(result_code)
 > I suck at writing readable code. This was rewritten by chatgpt so others could understand it, if you want the raw, unreadable, atrcious code, you can look into the files. 
 
 
-## 
+# My Workflow. 
+
