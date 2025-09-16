@@ -338,4 +338,6 @@ And there you have it!
 
 ---
 
+# Support <3. 
 
+If you found this helpful, feel free to tip—keeps me caffeinated and coding. 
