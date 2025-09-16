@@ -288,3 +288,42 @@ pyperclip.copy(result_code)
 
 # My Workflow. 
 
+I use VSCode to write my notes. Because of an extension called `HyperSnips` which makes stuff very much easier for me to write equations by the use of snippets. Like I just type `2/5` in a math environment to get `\frac{2}{5}` and a few others. 
+
+-  `;d` ⇒ `\delta`
+- `fm` ⇒ `\({cursor here}\)`
+
+And SO MANY more. I'll explain how to set it up.
+
+## Setup. 
+
+Obviously install VS Code or any VS Code forks (like trae, kiro, etc.)
+
+### 1. Install Latex Distribution.
+
+- If on Linux (arch)
+    - `yay -S texlive`
+
+- For Windows: 
+    - First install strawberry perl, and then MikTex or any other distribution availble for Windows. 
+
+- For Mac: 
+    - Install MacTex. 
+
+
+### 2. Extensions. 
+
+1. `Latex Workshop` 
+2. `HyperSnips`
+
+### 3. Snippets.
+
+Look at this: https://github.com/sleepymalc/VSCode-LaTeX-Inkscape?tab=readme-ov-file#hypersnips
+
+For the setup of the snippets, download [this file](https://github.com/sleepymalc/VSCode-LaTeX-Inkscape/blob/main/VSCode-setting/Snippets/latex.hsnips) and paste it in the respective directory for each OS. The directory location is given in the README of HyperSnips extension. 
+
+And there you have it! 
+
+---
+
+
