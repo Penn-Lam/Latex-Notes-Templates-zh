@@ -6,6 +6,7 @@
 % and the document are in different directories.
 \usepackage{import}
 \usepackage{xcolor}
+\usepackage{CJKutf8} % 支持中文
 \usepackage{cancel}
 \usepackage{mathtools}
 
@@ -23,7 +24,8 @@
 \pagecolor{yorhabg}
 \color{yorhafg}
 
-\import{Singularity}{preamble.sty}
+% \import{Singularity}{preamble.sty}
+\usepackage{preamble} % preamble.sty 在同一级目录下
 
 % Removes padding above title
 \usepackage{titling}
@@ -96,6 +98,9 @@ overlay={\node[anchor=west,outer sep=2pt] at (frame.west) {\includegraphics[widt
 \date{\today}
 
 \begin{document}
+\begin{CJK*}{UTF8}{gbsn} % 包裹正文，使用内置简体中文字体渲染汉字
+% 若需繁体，可把 gbsn 改成 bsmi
+% \CJKfamily{...} % 选择字体族，切换字体
 
 \maketitle    
 
@@ -667,5 +672,6 @@ Now, since the net external field outside the conductor is \(E_{\text{external}}
 \vspace{0.1in}
 \hrule 
 
+\end{CJK*} % 结束中文环境
 \end{document}
 

@@ -6,6 +6,7 @@
 % and the document are in different directories.
 \usepackage{import}
 \usepackage{xcolor}
+\usepackage{CJKutf8} % 支持中文
 \usepackage{cancel}
 \usepackage{mathtools}
 
@@ -21,7 +22,8 @@
 \pagecolor{yorhabg}
 \color{yorhafg}
 
-\import{project2 (math-ellipse)}{preamble.sty}
+% \import{project2 (math-ellipse)}{preamble.sty}
+\usepackage{preamble} % preamble.sty 在同一级目录下
 
 % Removes padding above title
 \usepackage{titling}
@@ -84,6 +86,10 @@
 \date{\today}
 
 \begin{document}
+\begin{CJK*}{UTF8}{gbsn} % 包裹正文，使用内置简体中文字体渲染汉字
+% 若需繁体，可把 gbsn 改成 bsmi
+% \CJKfamily{...} % 选择字体族，切换字体
+
 \maketitle    
 
 \begin{question}
@@ -1240,5 +1246,5 @@ Then,
     \end{tikzpicture}
 \end{center}
 
-
+\end{CJK*}
 \end{document}
